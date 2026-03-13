@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Robot Industrial - A-Frame</title>
+    <meta name="description" content="Robot Industrial con primitivas A-Frame">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <!-- Iluminación -->
+      <a-entity light="color: #ffffff; intensity: 0.7; type: ambient;"></a-entity>
+      <a-entity light="color: #ffffff; intensity: 1.0; type: directional;" position="3 8 4"></a-entity>
+
+      <!-- Cielo celeste claro -->
+      <a-sky color="#C8E8F5"></a-sky>
+
+      <!-- Piso gris claro -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="30" height="30" color="#CCCCCC"></a-plane>
+
+      <!-- ========== CAJA AMARILLA IZQUIERDA ========== -->
+      <a-box position="-3.2 0.55 -5" width="1.8" height="1.1" depth="1.5" color="#F5C000"></a-box>
+
+      <!-- ========== BASE DEL ROBOT ========== -->
+      <a-box position="0 0.45 -5" width="1.8" height="0.9" depth="1.8" color="#F5C000"></a-box>
+      <a-cylinder position="0 0.92 -5" radius="0.75" height="0.16" color="#1A237E"></a-cylinder>
+
+      <!-- COLUMNA AZUL VERTICAL: de y=1.0 a y=2.4 → centro y=1.7, height=1.4 -->
+      <a-box position="0 1.7 -5" width="0.30" height="1.4" depth="0.30" color="#1976D2"></a-box>
+
+
+      <!-- ESFERA AZUL en punto A = tope de la columna -->
+      <a-sphere position="0 2.4 -5" radius="0.27" color="#1976D2"></a-sphere>
+
+      <!-- BRAZO NARANJA: centro en midpoint, width=length -->
+     <a-box
+     position="0.7 2.85 -5"
+     width="1.664"
+     height="0.25"
+     depth="0.25"
+     rotation="0 0 33"
+     color="#F5A800">
+     </a-box>
+
+      <!-- ESFERA NARANJA en punto B -->
+      <a-sphere position="1.4 3.3 -5" radius="0.27" color="#F57C00"></a-sphere>
+
+      <!--
+        BRAZO AZUL VERTICAL desde punto B hacia abajo hasta la pinza
+        Punto B = (1.4, 3.3)   Pinza top = (1.4, 1.55)
+        Centro = (1.4, 2.425)  height = 1.75
+      -->
+      <a-box position="1.4 2.425 -5" width="0.28" height="1.75" depth="0.28" color="#1976D2"></a-box>
+
+      <!-- PINZA GRIS: empieza donde termina el brazo vertical y=1.55 -->
+      <a-box position="1.4 1.22 -5" width="0.52" height="0.65" depth="0.40" color="#546E7A"></a-box>
+      <!-- Dedo izquierdo -->
+      <a-box position="1.22 0.78 -5" width="0.13" height="0.44" depth="0.17" color="#37474F"></a-box>
+      <!-- Dedo derecho -->
+      <a-box position="1.58 0.78 -5" width="0.13" height="0.44" depth="0.17" color="#37474F"></a-box>
+
+      <!-- ========== BANDA TRANSPORTADORA ========== -->
+      <!-- Banda angosta, va en eje Z (de frente a fondo), a la izquierda del robot -->
+      <!-- Robot en x=0, banda en x=-5, bien separada -->
+      <!-- Banda de z=-2 a z=-10, ancho en X = 1.2 unidades -->
+
+      <!-- PATAS AMARILLAS -->
+      <a-box position="-5.0 0.28 -2.5"  width="0.18" height="0.55" depth="0.18" color="#E8A000"></a-box>
+      <a-box position="-5.0 0.28 -9.5"  width="0.18" height="0.55" depth="0.18" color="#E8A000"></a-box>
+      <a-box position="-6.0 0.28 -2.5"  width="0.18" height="0.55" depth="0.18" color="#E8A000"></a-box>
+      <a-box position="-6.0 0.28 -9.5"  width="0.18" height="0.55" depth="0.18" color="#E8A000"></a-box>
+
+      <!-- CUERPO AMARILLO LATERAL IZQUIERDO -->
+      <a-box position="-4.88 0.55 -6.0" width="0.12" height="0.45" depth="7.2" color="#F5C000"></a-box>
+      <!-- CUERPO AMARILLO LATERAL DERECHO -->
+      <a-box position="-6.12 0.55 -6.0" width="0.12" height="0.45" depth="7.2" color="#F5C000"></a-box>
+      <!-- BASE AMARILLA -->
+      <a-box position="-5.5 0.30 -6.0"  width="1.4"  height="0.05" depth="7.2" color="#E8A000"></a-box>
+
+      <!-- CINTA NEGRA (superficie) -->
+      <a-box position="-5.5 0.77 -6.0"  width="1.15" height="0.07" depth="7.0" color="#222222"></a-box>
+
+      <!-- LÍNEAS GRISES (tablillas de la cinta) -->
+      <a-box position="-5.5 0.82 -3.0"  width="1.15" height="0.03" depth="0.07" color="#555555"></a-box>
+      <a-box position="-5.5 0.82 -4.0"  width="1.15" height="0.03" depth="0.07" color="#555555"></a-box>
+      <a-box position="-5.5 0.82 -5.0"  width="1.15" height="0.03" depth="0.07" color="#555555"></a-box>
+      <a-box position="-5.5 0.82 -6.0"  width="1.15" height="0.03" depth="0.07" color="#555555"></a-box>
+      <a-box position="-5.5 0.82 -7.0"  width="1.15" height="0.03" depth="0.07" color="#555555"></a-box>
+      <a-box position="-5.5 0.82 -8.0"  width="1.15" height="0.03" depth="0.07" color="#555555"></a-box>
+      <a-box position="-5.5 0.82 -9.0"  width="1.15" height="0.03" depth="0.07" color="#555555"></a-box>
+
+      <!-- RODILLOS extremos -->
+      <a-cylinder position="-5.5 0.77 -2.55" radius="0.10" height="1.15" rotation="0 0 90" color="#888888"></a-cylinder>
+      <a-cylinder position="-5.5 0.77 -9.45" radius="0.10" height="1.15" rotation="0 0 90" color="#888888"></a-cylinder>
+
+      <!-- CAJA DE CARTÓN sobre la banda -->
+      <a-box position="-5.5 1.18 -6.0"  width="0.7" height="0.7" depth="0.65" color="#D4943A"></a-box>
+      <!-- Tapa -->
+      <a-box position="-5.5 1.55 -6.0"  width="0.71" height="0.04" depth="0.66" color="#B87A2A"></a-box>
+
+      <!-- ========== MESA VERDE DERECHA ========== -->
+      <a-box position="3.6 0.55 -5" width="2.0" height="1.1" depth="1.8" color="#2E7D32"></a-box>
+      <a-box position="3.6 1.12 -5" width="2.1" height="0.12" depth="1.9" color="#1B5E20"></a-box>
+      <a-box position="3.6 1.28 -5" width="0.65" height="0.2" depth="0.5" color="#B0BEC5"></a-box>
+
+      <!-- ========== CÁMARA ========== -->
+      <a-entity position="0 2.5 2.5">
+        <a-camera look-controls wasd-controls></a-camera>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
